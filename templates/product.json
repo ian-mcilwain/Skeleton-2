@@ -18,9 +18,10 @@
       "blocks": {
         "text_gPRN9p": {
           "type": "text",
+          "repeater": "{{ product.metafields.custom.faq.value }}",
           "settings": {
-            "question": "",
-            "answer": ""
+            "question": "{{ block.repeater.question.value }}",
+            "answer": "{{ block.repeater.answer | metafield_tag }}"
           }
         }
       },
