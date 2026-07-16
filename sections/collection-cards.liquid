@@ -1,0 +1,40 @@
+<div class="collections-grid">
+  <h2>Our Collections</h2>
+  <ul>
+    {% for collection in collections %}
+    <li>
+      <div class="card">
+        {% comment %} <div class="media">
+          {{ 'collection-1' | placeholder_svg_tag }}
+        </div> {% endcomment %}
+        <h3>
+              {{- collection.title | link_to: collection.url }}
+        </h3>
+        <p>{{ collection.description }}</p>
+        <p>This collection includes {{ collection.all_products_count }} products</p>
+      </div>
+    </li>
+
+    
+    {% endfor %}
+
+  </ul>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "Collection Cards",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Collection Cards",
+      "category": "Collections"
+    }
+  ]
+}
+{% endschema %}
